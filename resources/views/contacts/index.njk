@@ -1,0 +1,66 @@
+{% extends 'master' %}
+
+{% block content %}
+	{% include 'layout.nav' %}
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1">
+				<div class="panel panel-default">
+					<div class="panel-heading">Contacts</div>
+					<div class="panel-body">
+						{% include 'layout.alerts' %}
+						<div class="row" style="">
+							<form method="get">
+								<div class="col-md-10">
+									<input type="text" class="form-control" placeholder="Search" name="search"
+										   aria-describedby="sizing-addon2" >
+								</div>
+								<div class="col-md-2">
+									<button class="btn btn-primary" type="submit">Search</button>
+								</div>
+							</form>
+						</div>
+						<div class="row mt">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th>First Name</th>
+										<th>Last Name</th>
+										<th>Phone</th>
+										<th>Action</th>
+									</tr>
+								</thead>
+								<tbody>
+								{% for contact in contacts %}
+									<tr>
+										<td>{{ contact.first_name }}</td>
+										<td>{{ contact.last_name }}</td>
+										<td>{{ contact.office_number }}</td>
+										<td style="width: 25%">
+											<div class="btn-group" role="group" aria-label="...">
+												<a href="/contact/view/{{ contact.id }}" type="button" class="btn
+												btn-default">View</a>
+												<a href="/contact/edit/{{ contact.id }}"
+												   type="button"
+												   class="btn btn-default">Update</a>
+												<a href="/contact/delete/{{ contact.id }}"
+												   type="button"
+												   class="btn btn-default"
+												   onclick="return confirm('Are you sure,you want to delete your Contact')">Delete</a>
+											</div>
+										</td>
+									</tr>
+								{% else %}
+									<tr>
+										<td colspan="4" class="nodata">No Data</td>
+									</tr>
+								{%  endfor %}
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

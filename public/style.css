@@ -1,0 +1,26 @@
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  -webkit-font-feature-settings: "kern", "liga", "pnum";
+  -moz-font-feature-settings: "kern", "liga", "pnum";
+  -ms-font-feature-settings: "kern", "liga", "pnum";
+  font-feature-settings: "kern", "liga", "pnum";
+  -webkit-font-smoothing: antialiased;
+  font-weight: lighter;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.nodata {
+    text-align: center
+}
+
+.mt {
+    margin-top: 20px;
+}
+
+.paddingRound {
+    padding: 10px 20px;
+}

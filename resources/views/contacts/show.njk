@@ -1,0 +1,49 @@
+{% extends 'master' %}
+
+{% block content %}
+	{% include 'layout.nav' %}
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1">
+				<div class="panel panel-default">
+					<div class="panel-heading">{{ contact.first_name }} {{ contact.last_name }}'s Contact</div>
+					<div class="panel-body">
+						<div class="row paddingRound">
+							<div class="col-md-2">First Name</div>
+							<div class="col-md-5">{{ contact.first_name }}</div>
+						</div>
+						<div class="row paddingRound">
+							<div class="col-md-2">Last Name</div>
+							<div class="col-md-5">{{ contact.last_name }}</div>
+						</div>
+						<div class="row paddingRound">
+							<div class="col-md-2">Office Number</div>
+							<div class="col-md-5">{{ contact.office_number }}</div>
+						</div>
+						<div class="row paddingRound">
+							<div class="col-md-2">Home Number</div>
+							<div class="col-md-5">{{ contact.home_number }}</div>
+						</div>
+						<div class="row paddingRound">
+							<div class="col-md-2">Office Email</div>
+							<div class="col-md-5">{{ contact.office_email }}</div>
+						</div>
+						<div class="row paddingRound">
+							<div class="col-md-2">Personal Email</div>
+							<div class="col-md-5">{{ contact.personal_email }}</div>
+						</div>
+						<div class="row paddingRound">
+							<div class="col-md-2">Birthday</div>
+							{% set birtday = formatDate(contact.birthday) %}
+							<div class="col-md-5">{{ birtday }}</div>
+						</div>
+						<div class="row paddingRound">
+							<div class="col-md-2">Note</div>
+							<div class="col-md-5">{{ contact.note }}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
